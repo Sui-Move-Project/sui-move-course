@@ -1,11 +1,10 @@
-// Copyright (c) Sui Foundation, Inc.
-// SPDX-License-Identifier: Apache-2.0
 
 #[test_only]
 module fungible_tokens::managed_tests {
 
     use fungible_tokens::managed::{Self, MANAGED};
-    use sui::coin::{Coin, TreasuryCap};
+    use sui::coin::{Coin, TreasuryCap};file:///home/rhi/sui_exercise/sdf/Todo-list-Move-smart-contract/sources/todo_list.move
+    
     use sui::test_scenario::{Self, next_tx, ctx};
 
     #[test]
