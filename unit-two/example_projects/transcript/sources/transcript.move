@@ -43,7 +43,8 @@ module sui_intro_unit_two::transcript {
         }, tx_context::sender(ctx))
     }
     
-    public fun add_additional_teacher( new_teacher_address: address, ctx: &mut TxContext){
+    public fun add_additional_teacher(_: &TeacherCap, new_teacher_address: address, ctx: &mut TxContext){
+        // added _: &TeacherCap
         transfer::transfer(
             TeacherCap {
                 id: object::new(ctx)
@@ -52,7 +53,9 @@ module sui_intro_unit_two::transcript {
         )
     }
 
-    public fun create_wrappable_transcript_object( history: u8, math: u8, literature: u8, ctx: &mut TxContext){
+    public fun create_wrappable_transcript_object(_: &TeacherCap, history: u8, math: u8, literature: u8, ctx: &mut TxContext){
+        // // added _: &TeacherCap
+        
         let wrappableTranscript = WrappableTranscript {
             id: object::new(ctx),
             history,

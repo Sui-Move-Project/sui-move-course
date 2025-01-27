@@ -13,8 +13,8 @@ module hello_world::hello_world {
     }
 
     #[lint_allow(self_transfer)]
-    public fun mint(ctx: mut TxContext) {
-        let object = HelloWordObject {
+    public fun mint(ctx: &mut TxContext) { // convert into mutable reference variable
+        let object = HelloWorldObject { // fixed into HelloWorldObject
             id: object::new(ctx),
             text: string::utf8(b"Hello World!")
         };
